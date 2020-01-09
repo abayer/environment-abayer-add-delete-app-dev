@@ -1,0 +1,216 @@
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-credential-initializer-5bdvb[0m
+{"level":"warn","ts":1578588602.0020251,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578588602.003098,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-8s4t5[0m
+{"level":"warn","ts":1578588603.446444,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1578588603.44824,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-git-source-abayer-uppercase-org-environmen-v4dx6[0m
+{"level":"warn","ts":1578588616.739256,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1578588617.9008112,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-dev.git @ v0.0.4 in path /workspace/source"}
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:3649382e9e6937fead7b06f1f57f31ea0e71a2aa
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+Clearing the domain 104.155.28.59.nip.io as when using auto-DNS domains we need to regenerate to ensure its always accurate in case the cluster or ingress service is recreated
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying the CLI packages using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+using version 2.0.1113 of **
+CLI packages kubectl, git, helm seem to be setup correctly
+NAME               VERSION
+**                 2.0.1113
+Kubernetes cluster v1.13.11-gke.14
+kubectl            v1.17.0
+helm client        Client: v2.14.3+g0e7f3b6
+git                2.21.1
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+Helm installed and configured
+Ensuring Helm chart repository https://storage.googleapis.com/chartmuseum.jenkins-x.io is configured
+Validating Kaniko secret in namespace **
+
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-jx-crds[0m
+Jenkins X CRDs upgraded with success
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-velero[0m
+Modified file /workspace/source/systems/velero/Chart.yaml to set the chart to version 4
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-velero-backups[0m
+Modified file /workspace/source/systems/velero-backups/Chart.yaml to set the chart to version 4
+Ignoring templates/default-backup.yaml
+No requirements file: /tmp/**-helm-apply-697222741/velero-backups/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-nginx-controller[0m
+Modified file /workspace/source/systems/**ing/Chart.yaml to set the chart to version 4
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-create-install-values[0m
+Waiting to find the external host name of the ingress controller Service in namespace kube-system with name **ing-nginx-ingress-controller
+No domain flag provided so using default 104.155.28.59.nip.io to generate Ingress rules
+defaulting the domain to 104.155.28.59.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-external-dns[0m
+Modified file /workspace/source/systems/external-dns/Chart.yaml to set the chart to version 4
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+Adding missing Helm repo: charts.bitnami.com https://charts.bitnami.com/bitnami
+Successfully added Helm repository charts.bitnami.com.
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-cert-manager-crds[0m
+customresourcedefinition.apiextensions.k8s.io/challenges.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/orders.acme.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificaterequests.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/certificates.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/clusterissuers.cert-manager.io configured
+customresourcedefinition.apiextensions.k8s.io/issuers.cert-manager.io configured
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-cert-manager[0m
+Modified file /workspace/source/systems/cm/Chart.yaml to set the chart to version 4
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+Adding missing Helm repo: charts.jetstack.io https://charts.jetstack.io
+Successfully added Helm repository charts.jetstack.io.
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-acme-issuer-and-certificate[0m
+Modified file /workspace/source/systems/acme/Chart.yaml to set the chart to version 4
+Ignoring templates/cert-manager-prod-certificate.yaml
+Ignoring templates/cert-manager-prod-issuer.yaml
+Ignoring templates/cert-manager-staging-certificate.yaml
+Ignoring templates/cert-manager-staging-issuer.yaml
+No requirements file: /tmp/**-helm-apply-108953264/acme/requirements.yaml so not checking for missing versions
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-vault[0m
+Not attempting to boot Vault as using secret storage: local
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-create-helm-values[0m
+defaulting to secret storage scheme local found from requirements file at /workspace/source/**-requirements.yml
+defaulting to secret base path to the cluster name ******-add-delete-app found from requirements file at /workspace/source/**-requirements.yml
+generated schema file /workspace/source/env/parameters.schema.json from template /workspace/source/env/parameters.tmpl.schema.json
+
+Jenkins X Admin Username ***** [Automatically accepted existing value]
+Jenkins X Admin Password *** [Automatically accepted existing value]
+Pipeline bot Git username ****** [Automatically accepted existing value]
+Pipeline bot Git email address andrew.bayer@gmail.com [Automatically accepted existing value]
+Pipeline bot Git token *** [Automatically accepted existing value]
+HMAC token, used to validate incoming webhooks. Press enter to use the generated token *** [Automatically accepted existing value]
+Do you want to configure an external Docker Registry? false [Automatically accepted existing value]
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-jenkins-x[0m
+Modified file /workspace/source/env/Chart.yaml to set the chart to version 4
+Ignoring templates/.gitignore
+Applying the kubernetes overrides at ../kubeProviders/gke/values.tmpl.yaml
+Verifying the helm requirements versions in dir: . using version stream URL: https://github.com/jenkins-x/jenkins-x-versions.git and git ref: v1.0.292
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+
+deployment.apps "jenkins-x-**-app-jacoco" deleted
+app.jenkins.io "jenkins-x-**-app-jacoco" deleted
+serviceaccount "jenkins-x-**-app-jacoco" deleted
+role.rbac.authorization.k8s.io "jenkins-x-**-app-jacoco" deleted
+rolebinding.rbac.authorization.k8s.io "jenkins-x-**-app-jacoco" deleted
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Validating git repository for dev environment at URL https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-dev.git
+Validating git repository for production environment at URL https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-production.git
+Using Git provider github at https://github.com
+? Using Git user name: ******
+? Using organisation: Abayer-UpperCase-Org
+Creating repository Abayer-UpperCase-Org/environment-******-add-delete-app-production
+Git repository Abayer-UpperCase-Org/environment-******-add-delete-app-production already exists
+Pushed Git repository to https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-production
+
+Validating git repository for staging environment at URL https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-staging.git
+Using Git provider github at https://github.com
+? Using Git user name: ******
+? Using organisation: Abayer-UpperCase-Org
+Creating repository Abayer-UpperCase-Org/environment-******-add-delete-app-staging
+Git repository Abayer-UpperCase-Org/environment-******-add-delete-app-staging already exists
+Pushed Git repository to https://github.com/Abayer-UpperCase-Org/environment-******-add-delete-app-staging
+
+Environment git repositories look good
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-repositories[0m
+Modified file /workspace/source/repositories/Chart.yaml to set the chart to version 4
+Ignoring templates/default-group.yaml
+No requirements file: /tmp/**-helm-apply-545278980/repositories/requirements.yaml so not checking for missing versions
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.104.155.28.59.nip.io
+Updating webhooks for Owner: Abayer-UpperCase-Org and Repository: environment-******-add-delete-app-dev in git server: https://github.com
+Checking hooks for repository Abayer-UpperCase-Org/environment-******-add-delete-app-dev with user ******
+Found matching hook for url http://hook-**.104.155.28.59.nip.io/hook
+Updating GitHub webhook for Abayer-UpperCase-Org/environment-******-add-delete-app-dev for url http://hook-**.104.155.28.59.nip.io/hook
+Updating webhooks for Owner: Abayer-UpperCase-Org and Repository: environment-******-add-delete-app-production in git server: https://github.com
+Checking hooks for repository Abayer-UpperCase-Org/environment-******-add-delete-app-production with user ******
+Found matching hook for url http://hook-**.104.155.28.59.nip.io/hook
+Updating GitHub webhook for Abayer-UpperCase-Org/environment-******-add-delete-app-production for url http://hook-**.104.155.28.59.nip.io/hook
+Updating webhooks for Owner: Abayer-UpperCase-Org and Repository: environment-******-add-delete-app-staging in git server: https://github.com
+Checking hooks for repository Abayer-UpperCase-Org/environment-******-add-delete-app-staging with user ******
+Found matching hook for url http://hook-**.104.155.28.59.nip.io/hook
+Updating GitHub webhook for Abayer-UpperCase-Org/environment-******-add-delete-app-staging for url http://hook-**.104.155.28.59.nip.io/hook
+
+Showing logs for build [32mabayer-uppercase-org-environmen-454dk-4[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                        STATUS
+crier-5945df9987-dx2tn                     Running
+deck-c554d4f8f-2l9c5                       Running
+deck-c554d4f8f-gknl6                       Running
+hook-fcb784985-bwznm                       Running
+hook-fcb784985-p6886                       Running
+horologium-9cb787cd8-lz5f2                 Running
+jenkins-x-chartmuseum-67f75c4884-49dmx     Running
+jenkins-x-controllerbuild-7856d654cb-n8xlm Running
+jenkins-x-controllerrole-55f786cff6-jw9nh  Running
+jenkins-x-gcactivities-1578587400-rwlmp    Succeeded
+jenkins-x-gcpods-1578587400-7jrkh          Succeeded
+jenkins-x-heapster-66754b8fc5-g269v        Running
+jenkins-x-nexus-64746b5786-mn6c2           Running
+pipeline-5ddf8d5979-fqtsl                  Running
+pipelinerunner-7bfb968679-lsv6c            Running
+tekton-pipelines-controller-d6dcc4b8-6cpz5 Running
+tide-667ff77444-mdgfm                      Running
+Verifying the git config
+Verifying username ****** at git server github at https://github.com
+Found 21 organisations in git server https://github.com: Abayer-UpperCase-Org, JavaPosseRoundup, alfredci, apache, cloudbees, cloudbees-oss, cloudcat-meow, codeship, jclouds, jenkins-inc, jenkins-infra, jenkins-oscar, jenkins-x, jenkins-x-apps, jenkins-x-charts, jenkins-x-dashboard, jenkins-x-quickstarts, jenkinsci, jenkinsci-cert, knative, tektoncd
+Validated pipeline user ****** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
