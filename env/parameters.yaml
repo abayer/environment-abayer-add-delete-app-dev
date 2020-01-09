@@ -1,0 +1,10 @@
+adminUser:
+  password: local:abayer-add-delete-app/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: andrew.bayer@gmail.com
+  token: local:abayer-add-delete-app/pipelineUser:token
+  username: abayer
+prow:
+  hmacToken: local:abayer-add-delete-app/prow:hmacToken
