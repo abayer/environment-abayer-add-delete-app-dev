@@ -1,4 +1,6 @@
 dex:
+  certs:
+    newApi: true
   connectors:
     github:
       config:
