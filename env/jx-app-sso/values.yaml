@@ -1,8 +1,0 @@
-dex:
-  connectors:
-    github:
-      config:
-        name: GitHub
-        type: github
-  domain: 104.155.28.59.nip.io
-enabledConnector: GitHub
